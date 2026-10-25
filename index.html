@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Furas Tree User Guide – Creed-to-Commerce™</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#12432f;--green2:#1f6b4a;--leaf:#dcefe3;--gold:#c9a227;--gold2:#8a6d0f;--cream:#fbf7ea;--paper:#fffdf5;--ink:#1d2a24;--muted:#5b6a62;--line:#ddd3b4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Amiri","Georgia",serif;font-size:18px;line-height:1.65}
+.ar{font-family:"Amiri","Traditional Arabic",serif;direction:rtl}
+header{background:linear-gradient(135deg,var(--green),#0b2c1e);color:#fff;text-align:center;padding:22px 16px 18px;border-bottom:4px solid var(--gold)}
+header .bism{font-size:28px;color:var(--gold)}
+header h1{margin:2px 0 0;font-size:32px}
+header h1 .ar{color:var(--gold)}
+header p{margin:4px auto 0;max-width:720px;color:#e8ecd9;font-size:16px}
+.wrap{max-width:1100px;margin:0 auto;padding:18px 16px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px;align-items:start}
+@media(max-width:860px){.wrap{grid-template-columns:1fr}}
+.toc{position:sticky;top:12px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:16px}
+@media(max-width:860px){.toc{position:static}}
+.toc b{color:var(--green);display:block;margin-bottom:6px}
+.toc a{display:block;color:var(--green2);text-decoration:none;padding:2px 0}
+.toc a:hover{text-decoration:underline}
+.toc button{margin-top:10px;font:inherit;font-size:15px;padding:6px 12px;border-radius:9px;border:1px solid var(--gold2);background:var(--gold);color:#2a2000;cursor:pointer;width:100%}
+section{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:18px}
+h2{margin:0 0 8px;color:var(--green);font-size:26px;border-bottom:2px solid var(--gold);padding-bottom:4px}
+h2 .n{display:inline-block;background:var(--green);color:var(--gold);width:34px;height:34px;line-height:34px;border-radius:50%;text-align:center;font-size:18px;margin-inline-end:8px}
+h3{color:var(--green);margin:14px 0 4px;font-size:20px}
+p{margin:6px 0}
+ul,ol{margin:6px 0 6px 22px;padding:0}
+li{margin:3px 0}
+.tip,.warn,.note{border-radius:10px;padding:8px 14px;margin:10px 0;font-size:16.5px}
+.tip{background:var(--leaf);border:1px solid var(--green2)}
+.warn{background:#fdebe8;border:1px solid #a3322b}
+.note{background:#fff7da;border:1px dashed var(--gold2)}
+.tip::before{content:"Tip · ";font-weight:700;color:var(--green2)}
+.warn::before{content:"Important · ";font-weight:700;color:#a3322b}
+.note::before{content:"Note · ";font-weight:700;color:var(--gold2)}
+table{border-collapse:collapse;width:100%;font-size:16px;margin:8px 0}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:start;vertical-align:top}
+th{background:var(--leaf);color:var(--green)}
+kbd,.btn{display:inline-block;font:inherit;font-size:14.5px;padding:0 9px;border-radius:7px;border:1px solid var(--green);background:#fff;color:var(--green);white-space:nowrap}
+.btn.g{background:var(--gold);border-color:var(--gold2);color:#2a2000}
+.btn.d{color:#a3322b;border-color:#a3322b}
+.sw{display:inline-block;width:15px;height:15px;border-radius:4px;vertical-align:-2px;margin-inline-end:5px;border:2px solid #b9b199;background:var(--cream)}
+.sw.p{border-style:dashed;border-color:var(--gold2);background:#fff7da}
+.sw.pr{background:var(--leaf);border-color:var(--green2)}
+.sw.m{background:var(--green);border-color:var(--gold)}
+.diagram{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;font-size:16px;line-height:1.5}
+.diagram .crown{display:inline-block;background:var(--green);color:var(--gold);border-radius:99px;padding:2px 20px;margin:2px}
+.diagram .b{display:inline-block;border-radius:8px;padding:1px 12px;margin:2px;color:#fff}
+.diagram .deen{background:var(--green)}.diagram .dunya{background:#7a5410}
+.diagram .trunk{display:inline-block;border:2px solid var(--gold);border-radius:10px;padding:1px 16px;margin:2px}
+.diagram .root{display:inline-block;border:2px solid #6b4a2b;border-radius:10px;padding:1px 12px;margin:2px}
+dl dt{font-weight:700;color:var(--green);margin-top:8px}
+dl dd{margin:0 0 4px 0}
+details{border:1px solid var(--line);border-radius:10px;background:#fff;margin:6px 0;padding:6px 12px}
+summary{cursor:pointer;font-weight:700;color:var(--green)}
+footer{text-align:center;color:var(--muted);font-size:15px;padding:10px 12px 34px}
+footer b{color:var(--green)}
+@media print{
+ body{background:#fff;font-size:12pt}
+ .toc{display:none}.wrap{display:block;padding:0}
+ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ section{break-inside:avoid-page;box-shadow:none}
+ details{display:block}details>*{display:block}
+ @page{size:A4;margin:14mm}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="bism ar">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+  <h1>Furas Tree · User Guide <span class="ar">دَلِيلُ المُسْتَخْدِم</span></h1>
+  <p>How to grow every opportunity (<span class="ar">فُرَص</span>) in Deen and Dunya, step by step, with Creed-to-Commerce™.</p>
+</header>
+
+<div class="wrap">
+<nav class="toc" aria-label="Contents">
+  <b>Contents</b>
+  <a href="#welcome">1. Welcome</a>
+  <a href="#quick">2. Quick start (5 minutes)</a>
+  <a href="#tree">3. Understanding the tree</a>
+  <a href="#tabtree">4. The Tree tab</a>
+  <a href="#journey">5. My Journey tab</a>
+  <a href="#scholars">6. Ten Scholars tab</a>
+  <a href="#report">7. Report &amp; PDF tab</a>
+  <a href="#data">8. Your data &amp; privacy</a>
+  <a href="#rhythm">9. A weekly rhythm</a>
+  <a href="#glossary">10. Glossary</a>
+  <a href="#faq">11. Troubleshooting</a>
+  <a href="#adab">12. Using it with adab</a>
+  <button onclick="window.print()">🖨 Print / Save this guide as PDF</button>
+</nav>
+
+<main>
+
+<section id="welcome">
+  <h2><span class="n">1</span>Welcome</h2>
+  <p>The Furas Tree turns one Arabic word, <span class="ar">فُرْصَة</span> (<i>fursah</i>, an opportunity; plural <span class="ar">فُرَص</span> <i>furas</i>), into a living tree you can climb. Under the Creed-to-Commerce™ principle, everything we do in business and life flows from a creed and stays accountable to it. So the <b>roots are the Creed</b>, the <b>branches are behaviors</b> in Deen and Dunya, and the <b>fruit is Commerce</b> carried by Barakah.</p>
+  <p>The app helps you do four things:</p>
+  <ul>
+    <li><b>See</b> the full map of opportunity paths in Arabic with English parallels.</li>
+    <li><b>Choose</b> one concrete behavior on each branch and track it from Planned to Mastered.</li>
+    <li><b>Learn</b> from ten scholars of Ahlus Sunnah wal Jama‘ah whose teaching or life improved ordinary people’s lives.</li>
+    <li><b>Report</b> your growth as a PDF, and keep, back up or clear your data at any time.</li>
+  </ul>
+  <div class="note">The app is an educational reflection tool. It is not a fatwa, and it does not replace a qualified teacher.</div>
+</section>
+
+<section id="quick">
+  <h2><span class="n">2</span>Quick start (5 minutes)</h2>
+  <ol>
+    <li>Open the file in any modern browser (Chrome, Edge, Safari or Firefox) on phone, tablet or computer.</li>
+    <li>On the <b>Tree</b> tab, tap the gold-bordered trunk and read what <span class="ar">فُرْصَة</span> means.</li>
+    <li>Tap any <b>pulsing box</b>. It is the next step on that branch. Read the definition and the “Behavior to practice.”</li>
+    <li>Press <kbd>Planned</kbd> if you will start soon, or <kbd>Practicing</kbd> if you have started. Add a short note and a target date.</li>
+    <li>Go to <b>My Journey</b>, type your name and this season’s intention (<span class="ar">نِيَّة</span>).</li>
+    <li>When you are ready to start fresh, open <b>Report &amp; PDF</b> and press <span class="btn d">Remove sample data</span>.</li>
+  </ol>
+  <div class="tip">The app starts with a few sample entries so you can see how it looks. They are tagged “sample” or “SAMPLE:”. Remove them once you understand the screens.</div>
+</section>
+
+<section id="tree">
+  <h2><span class="n">3</span>Understanding the tree</h2>
+  <div class="diagram">
+    <div><span class="crown">الوَسَطِيَّة · Wasatiyyah — Balanced Middle Path (Peak) · Fruit: Barakah, Falah</span></div>
+    <div><span class="b deen">Deen · الدِّين (5 branches)</span> &nbsp; <span class="b dunya">Dunya · الدُّنْيَا (5 branches)</span></div>
+    <div><span class="trunk">فُرْصَة · Fursah (Trunk)</span></div>
+    <div><span class="root">نِيَّة</span><span class="root">عِلْم</span><span class="root">تَوْحِيد</span><span class="root">تَوَكُّل</span> <br>Roots · The Creed</div>
+  </div>
+  <h3>The parts</h3>
+  <table>
+    <tr><th>Part</th><th>Arabic · English</th><th>Meaning</th></tr>
+    <tr><td>Roots</td><td><span class="ar">نِيَّة · عِلْم · تَوْحِيد · تَوَكُّل</span><br>Intention · Knowledge · Oneness · Reliance</td><td>The Creed. Opportunities are read and used correctly only when they rest on these four.</td></tr>
+    <tr><td>Trunk</td><td><span class="ar">فُرْصَة</span> · Opportunity</td><td>A window of time, means and ability that Allah opens and then closes.</td></tr>
+    <tr><td>Deen boughs</td><td><span class="ar">الدِّين</span> · Religion</td><td>Worship, Knowledge, Purification, Character, Service.</td></tr>
+    <tr><td>Dunya boughs</td><td><span class="ar">الدُّنْيَا</span> · This world</td><td>Halal Earning, Trade, Skill &amp; Craft, Cultivation, Time &amp; Wealth.</td></tr>
+    <tr><td>Peak</td><td><span class="ar">الوَسَطِيَّة</span> · Balanced Middle Path</td><td>Deen and Dunya supporting each other (Qur’an 2:143; 28:77). This is where Commerce bears fruit.</td></tr>
+  </table>
+  <h3>The four levels on every branch</h3>
+  <p>Each branch has four boxes. Climb them from the bottom upward:</p>
+  <table>
+    <tr><th>Level</th><th>Arabic · English</th><th>What it asks of you</th></tr>
+    <tr><td>L1</td><td><span class="ar">يَقَظَة</span> · Awaken</td><td>Notice the opportunity and begin.</td></tr>
+    <tr><td>L2</td><td><span class="ar">مُجَاهَدَة</span> · Strive</td><td>Practice consistently, even when it is hard.</td></tr>
+    <tr><td>L3</td><td><span class="ar">إِحْسَان</span> · Excel</td><td>Do it with excellence and presence of heart.</td></tr>
+    <tr><td>L4</td><td><span class="ar">نَفْع</span> · Benefit Others</td><td>Turn your growth into benefit for family, community and the Ummah.</td></tr>
+  </table>
+  <h3>The four statuses</h3>
+  <table>
+    <tr><th>Status</th><th>Look</th><th>Counts as</th></tr>
+    <tr><td>Not started</td><td><span class="sw"></span>Plain cream box</td><td>0%</td></tr>
+    <tr><td>Planned</td><td><span class="sw p"></span>Dashed gold border</td><td>25%</td></tr>
+    <tr><td>Practicing</td><td><span class="sw pr"></span>Light green box</td><td>60%</td></tr>
+    <tr><td>Mastered</td><td><span class="sw m"></span>Dark green box with a ✓</td><td>100%</td></tr>
+  </table>
+  <div class="note">Your Deen % and Dunya % are each the average of the 20 boxes on that side, using the values above.</div>
+</section>
+
+<section id="tabtree">
+  <h2><span class="n">4</span>The Tree tab</h2>
+  <h3>Reading the picture</h3>
+  <ul>
+    <li><b>Dark chips</b> at the base of each stem name the branch. Green chips are Deen; brown-gold chips are Dunya.</li>
+    <li><b>Level labels</b> (Awaken, Strive, Excel, Benefit Others) appear in the narrow centre column.</li>
+    <li>A <b>pulsing box</b> is the lowest unfinished level on that branch, your suggested next step.</li>
+    <li>On a narrow screen, the tree scrolls sideways inside its frame. You can also switch to the outline.</li>
+  </ul>
+  <h3>Tree view and Outline view</h3>
+  <p>Use <span class="btn">Tree view</span> for the picture and <span class="btn">Outline view</span> for a list of collapsible branches with each level’s status. Phones open in Outline view automatically.</p>
+  <h3>The detail panel</h3>
+  <p>Tap any box (or a root, the trunk or the crown). The panel shows:</p>
+  <ol>
+    <li>The branch, realm and level.</li>
+    <li>The Arabic term, English parallel and definition.</li>
+    <li><b>Behavior to practice</b>, a concrete, measurable action.</li>
+    <li><b>Guiding voice</b>, a link that jumps to that scholar’s card.</li>
+    <li>Status buttons, a <b>Target date</b> and <b>My note</b>. Everything saves as you type or tap.</li>
+  </ol>
+  <div class="tip">Choose only one or two behaviors at a time. Mastering L1 on three branches beats starting L1 on all ten.</div>
+</section>
+
+<section id="journey">
+  <h2><span class="n">5</span>My Journey tab</h2>
+  <dl>
+    <dt>Your name and intention</dt>
+    <dd>Type your name and a sentence of intention. Both appear on the PDF report.</dd>
+    <dt>Progress &amp; Balance</dt>
+    <dd>Counts of boxes by status, and two bars: Deen % and Dunya %. If the gap is more than 10 points, the app suggests which side to strengthen so that livelihood stays rooted in Creed, and faith is expressed in useful work.</dd>
+    <dt>Your Next Steps</dt>
+    <dd>One row per branch showing the lowest unfinished level and its behavior. Tap a row to open that box on the Tree tab.</dd>
+    <dt>Opportunity Log</dt>
+    <dd>Record real opportunities: date, realm (Deen or Dunya), the opportunity spotted, the action taken, and the outcome or lesson. Press <span class="btn">Add entry</span>. Use <span class="btn">Edit</span> on any row to change it (then <span class="btn">Save changes</span> or <span class="btn">Cancel edit</span>), or <span class="btn d">Delete</span> to remove it.</dd>
+  </dl>
+  <div class="tip">A good log entry is specific: “Client asked for a rush job → wrote clear terms and price → accepted; learned to confirm deadlines in writing.”</div>
+</section>
+
+<section id="scholars">
+  <h2><span class="n">6</span>Ten Scholars tab</h2>
+  <p>Ten cards, in rough historical order: Al-Hasan al-Basri, Abu Hanifa, Ibn al-Mubarak, Imam al-Shafi‘i, al-Shaybani, al-Mawardi, Imam al-Ghazali, Ibn Taymiyyah, Ibn al-Qayyim and Ibn Rajab. Each card shows dates and role, their contribution to everyday lives, their main work, a saying or example with its source, and which tree boxes they guide.</p>
+  <h3>Authenticity tags</h3>
+  <table>
+    <tr><th>Tag</th><th>Meaning</th></tr>
+    <tr><td><b>Quoted</b></td><td>Wording widely reported from the source named on the card.</td></tr>
+    <tr><td><b>Attributed</b></td><td>A verse or saying ascribed to the scholar, such as a line from a diwan.</td></tr>
+    <tr><td><b>Teaching summary</b></td><td>A paraphrase of the book’s theme, not a direct quotation.</td></tr>
+    <tr><td><b>Lived example</b></td><td>A biographical example from classical sources, not a saying.</td></tr>
+  </table>
+  <div class="warn">Always verify the exact wording against the cited source with a qualified teacher before teaching, publishing or selling content based on these cards.</div>
+</section>
+
+<section id="report">
+  <h2><span class="n">7</span>Report &amp; PDF tab</h2>
+  <p>The page shows a live preview of your report: intention, summary and balance, every branch with its four statuses, your notes and target dates, your log, next steps, the ten scholars, and a disclaimer.</p>
+  <table>
+    <tr><th>Button</th><th>What it does</th></tr>
+    <tr><td><span class="btn g">⬇ Download PDF</span></td><td>Creates an A4 PDF file and downloads it, with a branded page footer. Arabic displays correctly. Needs an internet connection the first time the page loads, to fetch the PDF tools.</td></tr>
+    <tr><td><span class="btn">🖨 Print / Save as PDF</span></td><td>Opens your browser’s print dialog. Choose “Save as PDF” as the printer. Text stays sharp and selectable.</td></tr>
+    <tr><td><span class="btn">💾 Save my data</span></td><td>Downloads a .json backup of everything you entered.</td></tr>
+    <tr><td><span class="btn">📂 Load data</span></td><td>Restores a backup file you saved earlier.</td></tr>
+    <tr><td><span class="btn d">Remove sample data</span></td><td>Deletes only the sample entries and sample statuses. Your own work stays.</td></tr>
+    <tr><td><span class="btn d">Clear ALL my data</span></td><td>Erases every status, note, date, name, intention and log entry, after a confirmation.</td></tr>
+  </table>
+  <div class="tip">For the sharpest result, use Print / Save as PDF. For a quick shareable file, use Download PDF.</div>
+</section>
+
+<section id="data">
+  <h2><span class="n">8</span>Your data &amp; privacy</h2>
+  <ul>
+    <li>Everything you enter stays <b>in your own browser</b> (local storage). The app does not send it anywhere.</li>
+    <li>Data does <b>not</b> follow you to another browser, device or private window. Use <span class="btn">Save my data</span> and <span class="btn">Load data</span> to move it.</li>
+    <li>Clearing your browser’s site data erases the app’s data as well. Keep a backup file.</li>
+    <li>If you change a sample box (status, note or date), the app treats it as yours, and “Remove sample data” will no longer delete it.</li>
+  </ul>
+  <div class="warn">“Clear ALL my data” cannot be undone. Save a backup first if you may want it later.</div>
+  <div class="note">Because it is private to the browser, avoid entering sensitive personal details if you share a device.</div>
+</section>
+
+<section id="rhythm">
+  <h2><span class="n">9</span>A weekly rhythm</h2>
+  <table>
+    <tr><th>When</th><th>Do this</th><th>Where</th></tr>
+    <tr><td>Daily, 5 minutes</td><td>Review the day: which opportunities did I take or waste? (<span class="ar">مُحَاسَبَة</span>) Add a log entry if something stood out.</td><td>Journey → Log</td></tr>
+    <tr><td>Weekly, 15 minutes</td><td>Update statuses and notes. Choose next week’s one Deen and one Dunya behavior.</td><td>Tree, Journey → Next Steps</td></tr>
+    <tr><td>Monthly</td><td>Check the Deen/Dunya balance. Read one scholar’s card with its source.</td><td>Journey, Scholars</td></tr>
+    <tr><td>Quarterly</td><td>Download the PDF report and a data backup. Reflect on the Benefit Others (L4) boxes.</td><td>Report</td></tr>
+  </table>
+</section>
+
+<section id="glossary">
+  <h2><span class="n">10</span>Glossary</h2>
+  <table>
+    <tr><th>Arabic</th><th>Transliteration</th><th>English</th></tr>
+    <tr><td class="ar">فُرْصَة / فُرَص</td><td>Fursah / Furas</td><td>Opportunity / opportunities</td></tr>
+    <tr><td class="ar">الدِّين</td><td>Deen</td><td>Religion, the way of life before Allah</td></tr>
+    <tr><td class="ar">الدُّنْيَا</td><td>Dunya</td><td>This world, livelihood and worldly affairs</td></tr>
+    <tr><td class="ar">وَسَطِيَّة</td><td>Wasatiyyah</td><td>Balance, the middle path</td></tr>
+    <tr><td class="ar">نِيَّة</td><td>Niyyah</td><td>Intention</td></tr>
+    <tr><td class="ar">تَوَكُّل</td><td>Tawakkul</td><td>Reliance on Allah together with effort</td></tr>
+    <tr><td class="ar">مُحَاسَبَة</td><td>Muhasabah</td><td>Self-accounting</td></tr>
+    <tr><td class="ar">إِتْقَان / إِحْسَان</td><td>Itqan / Ihsan</td><td>Excellence in work / excellence in worship and conduct</td></tr>
+    <tr><td class="ar">كَسْب</td><td>Kasb</td><td>Earning a livelihood</td></tr>
+    <tr><td class="ar">رِبَا</td><td>Riba</td><td>Interest or usury</td></tr>
+    <tr><td class="ar">وَقْف</td><td>Waqf</td><td>Endowment held for lasting benefit</td></tr>
+    <tr><td class="ar">صَدَقَة جَارِيَة</td><td>Sadaqah jariyah</td><td>Ongoing charity</td></tr>
+    <tr><td class="ar">زَكَاة</td><td>Zakah</td><td>Obligatory purifying charity</td></tr>
+    <tr><td class="ar">بَرَكَة</td><td>Barakah</td><td>Divinely given increase and blessing</td></tr>
+    <tr><td class="ar">فَلَاح</td><td>Falah</td><td>Success in this life and the next</td></tr>
+    <tr><td class="ar">عَقِيدَة</td><td>‘Aqidah</td><td>Creed</td></tr>
+  </table>
+</section>
+
+<section id="faq">
+  <h2><span class="n">11</span>Troubleshooting</h2>
+  <details><summary>The Arabic looks plain or the font is different.</summary><p>The Amiri font loads from Google Fonts. Offline, the browser uses a standard Arabic font. The content is identical.</p></details>
+  <details><summary>Download PDF does nothing, or opens the print window.</summary><p>The PDF tools load from the internet when the page opens. If they could not load, the app opens the print dialog instead. Choose “Save as PDF” there, or reload the page while online and try again.</p></details>
+  <details><summary>My progress disappeared.</summary><p>Data is tied to one browser. You may have opened the file in another browser or a private window, or cleared site data. Use <b>Load data</b> with your latest backup file.</p></details>
+  <details><summary>I cannot see the whole tree on my phone.</summary><p>Swipe the tree sideways, or press <b>Outline view</b>, which is easier on small screens.</p></details>
+  <details><summary>I tapped “Remove sample data” but some samples remain.</summary><p>Samples you edited are treated as your own work. Reset them to Not started by tapping the status again, or use <b>Clear ALL my data</b> if you want a completely blank start.</p></details>
+  <details><summary>A box says “Not started” but is pulsing.</summary><p>That is expected: the pulse marks the next step on the branch, whatever its status.</p></details>
+  <details><summary>How do I move my data to another device?</summary><p>Press <b>Save my data</b>, send the .json file to the other device, open the app there and press <b>Load data</b>.</p></details>
+</section>
+
+<section id="adab">
+  <h2><span class="n">12</span>Using it with adab</h2>
+  <ul>
+    <li>Renew your <b>niyyah</b> each time you open the app. The tree is a means to action, not a scorecard to show off.</li>
+    <li>Do not measure yourself against others. Compare today’s self with yesterday’s.</li>
+    <li>Treat scholars’ words as guidance, and take rulings that affect your trade, finance or family to a qualified teacher.</li>
+    <li>Remember the balance of Qur’an 28:77: seek the Hereafter with what Allah has given you, and do not forget your share of this world.</li>
+  </ul>
+  <div class="note">Educational use only. Not a fatwa, legal or financial advice.</div>
+</section>
+
+</main>
+</div>
+<footer>
+  <div class="ar" style="font-size:21px;color:var(--gold2)">وَابْتَغِ فِيمَا آتَاكَ اللَّهُ الدَّارَ الْآخِرَةَ ۖ وَلَا تَنسَ نَصِيبَكَ مِنَ الدُّنْيَا</div>
+  <div><b>Creed-to-Commerce™</b> · The Balanced Middle Path Academy, LLC (BMPA)</div>
+</footer>
+</body>
+</html>
